@@ -3,3 +3,4 @@ geopy
 openrouteservice
 folium
 ortools
+streamlit-folium
