@@ -36,22 +36,29 @@ The optimized route is calculated and the map is displayed
 ## Folder Structure
 
 Margadarshi/
+
 ├── python/ # Python scripts (route_core, route_app.py)
+
 ├── requirements.txt # Project dependencies
+
 └── README.md # Project overview
 
 ## Requirements
  Core Logic
+ 
 -openrouteservice
 -geopy
 -ortools
 
 For Web Interface
+
 -streamlit
 -folium
 
 
 ## Author
 Kirana BV
+
 kiranaish15@gmail.com
+
 linkedin.com/in/kirana-BV0106
