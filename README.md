@@ -54,6 +54,11 @@ For Web Interface
 
 -streamlit
 -folium
+## 🗺️ Margadarshi- Smart Route Planner
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://margadarshi---optimised-routes-k3sajcbxlp9b9tj2pstaeh.streamlit.app/)
+
+An interactive web app that optimizes your travel plan using real-world driving distances and graph algorithms (TSP with OR-Tools)…
 
 ## Disclaimer
 This application uses OpenStreetMap data rendered via Folium. The map may not accurately reflect official international borders or jurisdictions. No geopolitical stance is expressed or implied.
