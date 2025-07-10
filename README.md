@@ -55,6 +55,8 @@ For Web Interface
 -streamlit
 -folium
 
+## Disclaimer
+This application uses OpenStreetMap data rendered via Folium. The map may not accurately reflect official international borders or jurisdictions. No geopolitical stance is expressed or implied.
 
 ## Author
 Kirana BV
