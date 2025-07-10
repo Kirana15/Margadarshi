@@ -39,8 +39,8 @@ if st.button("Plan Optimal Route"):
             st.success(" Optimized Visiting Order:")
             short_names = [place.split(",")[0].strip() for place in tsp_route]
             st.markdown(" → ".join(short_names))
-            with st.expander("Disclaimer"):
-                 st.warning(
+            
+            st.warning(
                     "Disclaimer: The map may not represent official borders or jurisdictions. "
                     "No geopolitical assumptions are made by this application."
                 )
