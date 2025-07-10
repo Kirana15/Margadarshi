@@ -1,11 +1,12 @@
 import openrouteservice
 import time
+import os
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 from ortools.constraint_solver import routing_enums_pb2, pywrapcp
 
-# ORS + geocoder setup
-API_KEY = "5b3ce3597851110001cf6248e6990bbb401349b1b593a291861818e4"
+
+API_KEY = os.getenv("ORS_API_KEY")
 geolocator = Nominatim(user_agent="kiran_route_planner_app_12")
 client = openrouteservice.Client(key=API_KEY)
 
