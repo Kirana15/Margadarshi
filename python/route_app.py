@@ -6,11 +6,11 @@ import streamlit.components.v1 as components
 
 
 st.set_page_config(page_title="Smart Route Planner", layout="wide")
-st.title("🗺️ Smart Route Planner using ORS + TSP")
+st.title("🗺 Margadarshi-Smart Route Planner ")
 
 origin = st.text_input("Enter starting location:")
 
-num_stops = st.number_input("How many stops?", min_value=1, max_value=10, step=1)
+num_stops = st.number_input("Places you'll visit", min_value=1, max_value=10, step=1)
 destinations = []
 for i in range(num_stops):
     place = st.text_input(f"Destination {i+1}")
@@ -36,9 +36,16 @@ if st.button("Plan Optimal Route"):
         if not tsp_route:
             st.error("Could not compute optimized route.")
         else:
-            st.success("✅ Optimized Visiting Order:")
-            st.markdown(" → ".join(tsp_route))
-
+            st.success(" Optimized Visiting Order:")
+            short_names = [place.split(",")[0].strip() for place in tsp_route]
+            st.markdown(" → ".join(short_names))
+            with st.expander("Disclaimer"):
+                st.markdown(
+                    """
+                    This map uses OpenStreetMap data and may not reflect official borders or jurisdictions.
+                    No geopolitical stance is implied.
+                    """
+                )
             # Create route map using folium
             route_coords = [locations[place] for place in tsp_route]
             start_lat, start_lon = route_coords[0]
@@ -60,10 +67,11 @@ if st.button("Plan Optimal Route"):
             fmap.save(map_file)
 
             # Display the HTML map in Streamlit
-            st.subheader("📍 Optimized Route Map")
+            st.subheader("Optimized Route Map")
             with open(map_file, 'r', encoding='utf-8') as f:
                 components.html(f.read(), height=600, width=900)
 
             # Optional: download button
             with open(map_file, "rb") as f:
                 st.download_button("⬇️ Download Map as HTML", f, file_name="route_map.html")
+
